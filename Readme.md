@@ -85,9 +85,9 @@ without deployment.yml
 kubectl run webapp --image=webapp:v1 --port 80
 ```
 
-or using deployment.yml file
+or using deployment.1.yml file
 ```
-kubectl create -f deployment.yml
+kubectl create -f deployment.1.yml
 ```
 
 once deployment is ready run this command to verify the pod is running fine
@@ -114,13 +114,19 @@ to edit the deployment run this command
 kubectl edit deployment.app/webapp
 ```
 
-and delete the pod
+## using configMap with k8s
+
+create a config map
 
 ```
-kubectl get pods
+kubectl create configmap myconfig --from-literal LANGUAGE=MARATHI
 ```
 
-kubectl delete pod [podname]
+```
+kubectl describe configmap myconfig
+```
+
+
 
 ## Cleanup
 
@@ -142,9 +148,3 @@ kubectl delete service webapp
 ```
 kubectl delete deployment webapp
 ```
-
-
-
-
-
-
