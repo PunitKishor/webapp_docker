@@ -1,0 +1,8 @@
+# Build runtime image
+FROM microsoft/dotnet:aspnetcore-runtime
+WORKDIR /app
+COPY /app/out .
+EXPOSE 80
+ENTRYPOINT ["dotnet", "app.dll"]
+ENV FIRST_NAME=FirstName
+ENV LAST_NAME=LastName
