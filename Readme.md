@@ -96,10 +96,25 @@ once deployment is ready run this command to verify the pod is running fine
 kubectl get pods
 ```
 
-after this we need to expose k8s deployment as a service so run this command
+after this we need to expose k8s deployment as a service
+
+Ru this command to create service from command line
 
 ```
 kubectl expose deployment webapp --type=NodePort --port 80 --target-port 80
+```
+
+or this to create servic using service.yml file
+
+```
+kubectl create -f service.yml
+```
+
+you can create deployment and service from a single file as well
+run this to create deployment and service together
+
+```
+kubectl create -f deployment.2.yml
 ```
 
 to test the applications run this command
